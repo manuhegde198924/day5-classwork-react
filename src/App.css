@@ -1,38 +1,54 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  overflow: hidden; /* Ensure the animation doesn't cause scrollbars */
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #3494e6,
+    #ec6ead
+  ); /* Gradient background */
+  animation: gradientAnimation 10s infinite alternate; /* Background animation */
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
-@keyframes App-logo-spin {
+header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+main {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }
